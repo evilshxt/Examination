@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FCM.41.020.061.24</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="scripts/aframe.js"></script>
+    <script type="module" src="scripts/config.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="components/overlay-slideshow.js"></script>
+    <script src="components/sunlight.js"></script>
+    <script src="components/camera-controls.js"></script>
+    <script src="components/floor.js"></script>
+    <script src="components/bar.js"></script>
+    <script src="components/pool.js"></script>
+    <script src="components/lantern.js"></script>
+</head>
+<body>
+    <a-scene background="color: #87ceeb" cursor="rayOrigin: mouse" overlay-slideshow="enabled: true" sunlight="enabled: true" camera-controls="enabled: true">
+        <!-- Colonial Mansion -->
+        <a-gltf-model src="#colonial-mansion-model" position="0 0 0" scale="1 1 1" id="colonial-mansion"></a-gltf-model>
+        
+        <!-- McLaren Car -->
+        <a-gltf-model src="#mclaren-model" position="-1.849 -0.322 22.768" rotation="0 90 0" scale="1 1 1" id="mclaren-car"></a-gltf-model>
+        
+        <!-- Street Lamps -->
+        <a-entity street-lamp="position: 2.549 0 16.768"></a-entity>
+        <a-entity street-lamp="position: 9 0 16.768"></a-entity>
+        
+        <!-- Trees in front of street lamps -->
+        <a-gltf-model src="#birch-tree-model" position="2.549 0 22.768" scale="0.8 0.8 0.8" rotation="0 45 0"></a-gltf-model>
+        <a-gltf-model src="#tree-model" position="9 0 22.768" scale="2 2 2" rotation="0 -30 0"></a-gltf-model>
+        
+        <!-- Environment -->
+        <a-entity 
+            environment="preset: forest; 
+                        groundColor: #4c5f3a; 
+                        playArea: 5; 
+                        dressingAmount: 2000; 
+                        dressingScale: 1.5; 
+                        active: true" 
+            position="125 0 1">
+        </a-entity>
+        <a-entity 
+            environment="preset: forest; 
+                        groundColor: #4c5f3a; 
+                        playArea: 5; 
+                        dressingAmount: 2000; 
+                        dressingScale: 1.5; 
+                        active: true" 
+            position="-115 0 1">
+        </a-entity>
+        <a-entity 
+            environment="preset: forest; 
+                        groundColor: #4c5f3a; 
+                        playArea: 5; 
+                        dressingAmount: 2000; 
+                        dressingScale: 1.5; 
+                        active: true" 
+            position="0 0 -125">
+        </a-entity>
+        
+        <!-- Luxury Bar -->
+        <a-entity bar-scene="position: 11.5 0 -18" rotation="0 -90 0"></a-entity>
+        
+        <!-- Floor -->
+        <a-entity floor="width: 100; height: 100; texture: assets/grass.webp; textureSize: 2; color: #87A96B; exclusions: [{&quot;x&quot;: -3.78, &quot;z&quot;: -18.487, &quot;width&quot;: 7.2, &quot;depth&quot;: 4.8}, {&quot;x&quot;: 6.8, &quot;z&quot;: -17.4, &quot;width&quot;: 10.65, &quot;depth&quot;: 7}]"></a-entity>
+        
+        <!-- Camera -->
+        <a-camera position="4.8 10 25" rotation="-30 0 0" look-controls="enabled: true"></a-camera>
+        
+        <!-- Swimming Pool -->
+        <a-entity pool-scene="position: -3.780 0 -18.487; scale: 0.3 1 0.3"></a-entity>
+        
+        <!-- Assets -->
+        <a-assets>
+            <a-asset-item id="colonial-mansion-model" src="models/compressed/colonial_mansion-compressed.glb"></a-asset-item>
+            <a-asset-item id="mclaren-model" src="models/compressed/mclaren-compressed.glb"></a-asset-item>
+            <a-asset-item id="birch-tree-model" src="models/compressed/birch_tree-compressed.glb"></a-asset-item>
+            <a-asset-item id="tree-model" src="models/compressed/tree-compressed.glb"></a-asset-item>
+            <audio id="background-music" src="assets/chris-zabriskie-cylinder-five.mp3" preload="auto"></audio>
+        </a-assets>
+    </a-scene>
+</body>
+</html>
