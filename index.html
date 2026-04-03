@@ -15,9 +15,12 @@
     <script src="components/bar.js"></script>
     <script src="components/pool.js"></script>
     <script src="components/lantern.js"></script>
+    <script src="components/loading-indicator.js"></script>
+    <script src="components/fps-display.js"></script>
+<script src="components/distance-cull.js"></script>
 </head>
 <body>
-    <a-scene background="color: #87ceeb" cursor="rayOrigin: mouse" overlay-slideshow="enabled: true" sunlight="enabled: true" camera-controls="enabled: true">
+    <a-scene background="color: #87ceeb" cursor="rayOrigin: mouse" overlay-slideshow="enabled: true" sunlight="enabled: true" camera-controls="enabled: true" loading-indicator="enabled: true" fps-display="enabled: true" renderer="colorManagement: false; antialias: false; shadowMapEnabled: false">
         <!-- Colonial Mansion -->
         <a-gltf-model src="#colonial-mansion-model" position="0 0 0" scale="1 1 1" id="colonial-mansion"></a-gltf-model>
         
@@ -37,8 +40,8 @@
             environment="preset: forest; 
                         groundColor: #4c5f3a; 
                         playArea: 5; 
-                        dressingAmount: 2000; 
-                        dressingScale: 1.5; 
+                        dressingAmount: 800; 
+                        dressingScale: 1.0; 
                         active: true" 
             position="125 0 1">
         </a-entity>
@@ -46,8 +49,8 @@
             environment="preset: forest; 
                         groundColor: #4c5f3a; 
                         playArea: 5; 
-                        dressingAmount: 2000; 
-                        dressingScale: 1.5; 
+                        dressingAmount: 800; 
+                        dressingScale: 1.0; 
                         active: true" 
             position="-115 0 1">
         </a-entity>
@@ -55,8 +58,8 @@
             environment="preset: forest; 
                         groundColor: #4c5f3a; 
                         playArea: 5; 
-                        dressingAmount: 2000; 
-                        dressingScale: 1.5; 
+                        dressingAmount: 800; 
+                        dressingScale: 1.0; 
                         active: true" 
             position="0 0 -125">
         </a-entity>

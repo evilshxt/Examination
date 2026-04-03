@@ -402,6 +402,9 @@ AFRAME.registerComponent('overlay-slideshow', {
         this.showOverlay = false;
         document.removeEventListener('keydown', this.keydownHandler);
         
+        // Emit overlay closed event for loading indicator
+        window.dispatchEvent(new CustomEvent('overlay-closed'));
+        
         // Start background music when overlay closes
         const backgroundMusic = document.getElementById('background-music');
         if (backgroundMusic) {

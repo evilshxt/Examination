@@ -199,7 +199,7 @@ AFRAME.registerComponent('pool-scene', {
   // ── build animated Three.js water mesh ────────────────────────────────────
   _buildWater: function () {
     const scene3 = this.el.sceneEl.object3D;
-    const SEG = 80;
+    const SEG = 40; // Reduced from 80 for better performance
 
     const geo = new THREE.PlaneGeometry(23.6, 15.6, SEG, SEG);
     geo.rotateX(-Math.PI / 2);
